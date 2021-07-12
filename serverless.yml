@@ -2,6 +2,9 @@ service: sls-graphql-test01
 
 frameworkVersion: "2"
 
+plugins:
+   - serverless-appsync-plugin
+
 provider:
   name: aws
   runtime: nodejs12.x
@@ -13,3 +16,42 @@ functions:
       - http:
           path: ping
           method: get
+
+custom:
+  appSync:
+    name:  appsync-backend-test01
+    authenticationType: AMAZON_COGNITO_USER_POOLS
+    schema: schema.graphql
+    mappingTemplatesLocation: mapping-templates
+    mappingTemplates:
+      - type: Query
+        field: getItemsTable
+        dataSource: ItemsTable
+
+dataSources:
+  - type: NONE
+    name: none
+  - type: AMAZON_DYNAMODB
+    name: usersTable
+    config:
+      tableName: !Ref ItemsTable
+
+resources:
+  Resources:
+    ItemsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: title
+            AttributeType: S
+        Tags:
+          - Key: Environment
+            Value: ${self:custom.stage}
+          - Key: Name
+            Value: items-table

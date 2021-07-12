@@ -1,0 +1,114 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Item {
+  id: ID!
+  title: String!
+}
+
+type ItemsTable {
+  id: String!
+  title: String!
+}
+
+type ItemsTableConnection {
+  items: [ItemsTable]
+  nextToken: String
+}
+
+type Mutation {
+  createItemsTable(input: CreateItemsTableInput!): ItemsTable
+  deleteItemsTable(input: DeleteItemsTableInput!): ItemsTable
+  putItem(id: ID!, title: String!): Item
+  updateItemsTable(input: UpdateItemsTableInput!): ItemsTable
+}
+
+type Query {
+  getItemsTable(id: String!, title: String!): ItemsTable
+  listItemsTables(filter: TableItemsTableFilterInput, limit: Int, nextToken: String): ItemsTableConnection
+  singleItem(id: ID!): Item
+}
+
+type Subscription {
+  onCreateItemsTable(id: String, title: String): ItemsTable @aws_subscribe(mutations : ["createItemsTable"])
+  onDeleteItemsTable(id: String, title: String): ItemsTable @aws_subscribe(mutations : ["deleteItemsTable"])
+  onUpdateItemsTable(id: String, title: String): ItemsTable @aws_subscribe(mutations : ["updateItemsTable"])
+}
+
+input CreateItemsTableInput {
+  id: String!
+  title: String!
+}
+
+input DeleteItemsTableInput {
+  id: String!
+  title: String!
+}
+
+input TableBooleanFilterInput {
+  eq: Boolean
+  ne: Boolean
+}
+
+input TableFloatFilterInput {
+  between: [Float]
+  contains: Float
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+  notContains: Float
+}
+
+input TableIDFilterInput {
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+}
+
+input TableIntFilterInput {
+  between: [Int]
+  contains: Int
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+  notContains: Int
+}
+
+input TableItemsTableFilterInput {
+  id: TableStringFilterInput
+  title: TableStringFilterInput
+}
+
+input TableStringFilterInput {
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+}
+
+input UpdateItemsTableInput {
+  id: String!
+  title: String!
+}
