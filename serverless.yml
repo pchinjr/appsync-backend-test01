@@ -91,13 +91,3 @@ resources:
           - ALLOW_USER_PASSWORD_AUTH
           - ALLOW_REFRESH_TOKEN_AUTH
         PreventUserExistenceErrors: ENABLED
-
-  Outputs:
-    AwsRegion:
-      Value: ${self:custom.region}
-
-    CognitoUserPoolId:
-      Value: !Ref CognitoUserPool
-
-    WebCognitoUserPoolClientId:
-      Value: !Ref WebUserPoolClient
