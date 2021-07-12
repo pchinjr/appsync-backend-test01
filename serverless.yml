@@ -8,6 +8,9 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+  environment:
+    STAGE: ${self:custom.stage}
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
 
 functions:
   currentTime:
@@ -57,7 +60,7 @@ resources:
         Tags:
           - Key: Name
             Value: items-table
-            
+
     CognitoUserPool:
       Type: AWS::Cognito::UserPool
       Properties:
@@ -77,3 +80,24 @@ resources:
             Name: name
             Required: false
             Mutable: true
+
+    WebUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        UserPoolId: !Ref CognitoUserPool
+        ClientName: web
+        ExplicitAuthFlows:
+          - ALLOW_USER_SRP_AUTH
+          - ALLOW_USER_PASSWORD_AUTH
+          - ALLOW_REFRESH_TOKEN_AUTH
+        PreventUserExistenceErrors: ENABLED
+
+  Outputs:
+    AwsRegion:
+      Value: ${self:custom.region}
+
+    CognitoUserPoolId:
+      Value: !Ref CognitoUserPool
+
+    WebCognitoUserPoolClientId:
+      Value: !Ref WebUserPoolClient
