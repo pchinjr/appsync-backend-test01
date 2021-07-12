@@ -8,9 +8,6 @@ frameworkVersion: "2"
 provider:
   name: aws
   runtime: nodejs12.x
-  environment:
-    STAGE: ${self:custom.stage}
-    AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
 
 functions:
   currentTime:
