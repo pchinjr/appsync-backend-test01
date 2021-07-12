@@ -1,4 +1,4 @@
-service: sls-graphql-test02
+service: sls-graphql-test01
 
 frameworkVersion: "2"
 
