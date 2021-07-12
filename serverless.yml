@@ -1,4 +1,4 @@
-service: serverless-simple-http-endpoint
+service: sls-graphql-test02
 
 frameworkVersion: "2"
 
