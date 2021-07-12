@@ -2,8 +2,8 @@ service: sls-graphql-test01
 
 frameworkVersion: "2"
 
-plugins:
-   - serverless-appsync-plugin
+# plugins:
+#    - serverless-appsync-plugin
 
 provider:
   name: aws
@@ -20,7 +20,7 @@ functions:
           path: ping
           method: get
 
-custom:
+# custom:
   # appSync:
   #   name:  appsync-backend-test01
   #   authenticationType: AMAZON_COGNITO_USER_POOLS
