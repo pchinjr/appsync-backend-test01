@@ -1,0 +1,19 @@
+{
+  "name": "appsync-backend-test01",
+  "version": "1.0.0",
+  "description": "creating appsync api with serverless framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pchinjr/appsync-backend-test01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pchinjr/appsync-backend-test01/issues"
+  },
+  "homepage": "https://github.com/pchinjr/appsync-backend-test01#readme"
+}
