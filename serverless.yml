@@ -33,13 +33,13 @@ custom:
     mappingTemplates:
       - type: Query
         field: getItemsTable
-        dataSource: itemsTable
+        dataSource: ItemsTable
 
   dataSources:
     - type: NONE
       name: none
     - type: AMAZON_DYNAMODB
-      name: itemsTable
+      name: ItemsTable
       config:
         tableName: !Ref ItemsTable
 
