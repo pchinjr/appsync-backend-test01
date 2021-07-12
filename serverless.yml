@@ -28,13 +28,13 @@ custom:
         field: getItemsTable
         dataSource: ItemsTable
 
-dataSources:
-  - type: NONE
-    name: none
-  - type: AMAZON_DYNAMODB
-    name: usersTable
-    config:
-      tableName: !Ref ItemsTable
+  dataSources:
+    - type: NONE
+      name: none
+    - type: AMAZON_DYNAMODB
+      name: usersTable
+      config:
+        tableName: !Ref ItemsTable
 
 resources:
   Resources:
