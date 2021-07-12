@@ -21,27 +21,27 @@ functions:
           method: get
 
 custom:
-  appSync:
-    name:  appsync-backend-test01
-    authenticationType: AMAZON_COGNITO_USER_POOLS
-    userPoolConfig:
-      awsRegion: us-east-1
-      defaultAction: ALLOW
-      userPoolId: !Ref CognitoUserPool
-    schema: schema.graphql
-    mappingTemplatesLocation: mapping-templates
-    mappingTemplates:
-      - type: Query
-        field: getItemsTable
-        dataSource: ItemsTable
+  # appSync:
+  #   name:  appsync-backend-test01
+  #   authenticationType: AMAZON_COGNITO_USER_POOLS
+  #   userPoolConfig:
+  #     awsRegion: us-east-1
+  #     defaultAction: ALLOW
+  #     userPoolId: !Ref CognitoUserPool
+  #   schema: schema.graphql
+  #   mappingTemplatesLocation: mapping-templates
+  #   mappingTemplates:
+  #     - type: Query
+  #       field: getItemsTable
+  #       dataSource: ItemsTable
 
-  dataSources:
-    - type: NONE
-      name: none
-    - type: AMAZON_DYNAMODB
-      name: ItemsTable
-      config:
-        tableName: !Ref ItemsTable
+  # dataSources:
+  #   - type: NONE
+  #     name: none
+  #   - type: AMAZON_DYNAMODB
+  #     name: ItemsTable
+  #     config:
+  #       tableName: !Ref ItemsTable
 
 resources:
   Resources:
