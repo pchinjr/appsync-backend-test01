@@ -2,8 +2,8 @@ service: sls-graphql-test01
 
 frameworkVersion: "2"
 
-# plugins:
-#    - serverless-appsync-plugin
+plugins:
+   - serverless-appsync-plugin
 
 provider:
   name: aws
@@ -17,28 +17,28 @@ functions:
           path: ping
           method: get
 
-# custom:
-  # appSync:
-  #   name:  appsync-backend-test01
-  #   authenticationType: AMAZON_COGNITO_USER_POOLS
-  #   userPoolConfig:
-  #     awsRegion: us-east-1
-  #     defaultAction: ALLOW
-  #     userPoolId: !Ref CognitoUserPool
-  #   schema: schema.graphql
-  #   mappingTemplatesLocation: mapping-templates
-  #   mappingTemplates:
-  #     - type: Query
-  #       field: getItemsTable
-  #       dataSource: ItemsTable
+custom:
+  appSync:
+    name:  appsync-backend-test01
+    authenticationType: AMAZON_COGNITO_USER_POOLS
+    userPoolConfig:
+      awsRegion: us-east-1
+      defaultAction: ALLOW
+      userPoolId: !Ref CognitoUserPool
+    schema: schema.graphql
+    mappingTemplatesLocation: mapping-templates
+    mappingTemplates:
+      - type: Query
+        field: getItemsTable
+        dataSource: ItemsTable
 
-  # dataSources:
-  #   - type: NONE
-  #     name: none
-  #   - type: AMAZON_DYNAMODB
-  #     name: ItemsTable
-  #     config:
-  #       tableName: !Ref ItemsTable
+  dataSources:
+    - type: NONE
+      name: none
+    - type: AMAZON_DYNAMODB
+      name: ItemsTable
+      config:
+        tableName: !Ref ItemsTable
 
 resources:
   Resources:
