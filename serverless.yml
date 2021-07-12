@@ -51,7 +51,5 @@ resources:
           - AttributeName: title
             AttributeType: S
         Tags:
-          - Key: Environment
-            Value: ${self:custom.stage}
           - Key: Name
             Value: items-table
