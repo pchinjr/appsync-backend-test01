@@ -21,6 +21,10 @@ custom:
   appSync:
     name:  appsync-backend-test01
     authenticationType: AMAZON_COGNITO_USER_POOLS
+    userPoolConfig:
+      awsRegion: us-east-1
+      defaultAction: ALLOW
+      userPoolId: !Ref CognitoUserPool
     schema: schema.graphql
     mappingTemplatesLocation: mapping-templates
     mappingTemplates:
@@ -53,3 +57,23 @@ resources:
         Tags:
           - Key: Name
             Value: items-table
+            
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        AutoVerifiedAttributes:
+          - email
+        Policies:
+          PasswordPolicy:
+            MinimumLength: 8
+            RequireLowercase: false
+            RequireNumbers: false
+            RequireUppercase: false
+            RequireSymbols: false
+        UsernameAttributes:
+          - email
+        Schema:
+          - AttributeDataType: String
+            Name: name
+            Required: false
+            Mutable: true
