@@ -31,10 +31,18 @@ Please spend only what you consider a reasonable amount of time for this.
 ## CI/CD
 
 You must set the following environment variables in the secrets section
+
 AWS_ACCESS_KEY_ID
+
 AWS_SECRET_ACCESS_KEY
+
 DEV_ACCOUNT_ID - which is the IAM role account number for your ci-role.
 
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/github_actions_01.png)
 
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/appsync_01.png)
+
+## TODO
+add ability to deploy to a second environment like prod
+review graphql schema
+praise cage
