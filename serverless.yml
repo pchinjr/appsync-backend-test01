@@ -19,7 +19,7 @@ functions:
 
 custom:
   appSync:
-    name:  appsync-backend-test01
+    name: appsync-backend-test01
     authenticationType: AMAZON_COGNITO_USER_POOLS
     userPoolConfig:
       awsRegion: us-east-1
@@ -32,13 +32,13 @@ custom:
         field: getItemsTable
         dataSource: ItemsTable
 
-  dataSources:
-    - type: NONE
-      name: none
-    - type: AMAZON_DYNAMODB
-      name: ItemsTable
-      config:
-        tableName: !Ref ItemsTable
+    dataSources:
+      - type: NONE
+        name: none
+      - type: AMAZON_DYNAMODB
+        name: ItemsTable
+        config:
+          tableName: !Ref ItemsTable
 
 resources:
   Resources:
