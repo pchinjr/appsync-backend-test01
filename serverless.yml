@@ -34,6 +34,9 @@ custom:
       - type: Mutation
         field: createItemsTable
         dataSource: ItemsTable
+      - type: Mutation
+        field: deleteItemsTable
+        dataSource: ItemsTable
 
     dataSources:
       - type: NONE
