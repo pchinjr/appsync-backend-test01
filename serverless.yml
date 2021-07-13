@@ -31,6 +31,9 @@ custom:
       - type: Query
         field: getItemsTable
         dataSource: ItemsTable
+      - type: Mutation
+        field: createItemsTable
+        dataSource: ItemsTable
 
     dataSources:
       - type: NONE
