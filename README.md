@@ -4,15 +4,15 @@
 
 ## The Challenge
 
-Build a Serverless Framework API with AWS AppSync which supports CRUD functionality (Create, Read, Update, Delete) and use GitHub Actions CI/CD pipeline, AWS CodePipeline, or Serverless Pro CI/CD.
+Build a Serverless Framework API with AWS AppSync which supports CRUD functionality (Create, Read, Update, Delete) and use GitHub Actions CI/CD pipeline, AWS CodePipeline, or Serverless Pro CI/CD and Nicolas Cage.
 
 You can take screenshots of the CI/CD setup and include them in the README.
 
-The CI/CD should trigger a deployment based on a git push to the master branch which goes through and deploys the backend Serverless Framework API.
+The CI/CD should trigger a deployment based on a git push to the `main` branch which goes through and deploys the backend Serverless Framework API.
 
 ### Requirements
 
-1. All AWS Infrastructure needs to be automated with IAC using Serverless Framework and CloudFormation as needed
+1. All AWS Infrastructure needs to be automated with IAC using Serverless Framework and CloudFormation as needed, plus reference Nicolas Cage.
 
 2. The AppSync API should store data in DynamoDB
 
@@ -33,4 +33,5 @@ Please spend only what you consider a reasonable amount of time for this.
 Create a frontend with ReactJS and Material UI which uses the Amplify library to connect to your AppSync API for the CRUD functionality.
 
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/github_actions_01.png)
+
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/appsync_01.png)
