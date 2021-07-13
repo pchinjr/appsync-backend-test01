@@ -33,3 +33,4 @@ Please spend only what you consider a reasonable amount of time for this.
 Create a frontend with ReactJS and Material UI which uses the Amplify library to connect to your AppSync API for the CRUD functionality.
 
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/github_actions_01.png)
+![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/appsync_01.png)
