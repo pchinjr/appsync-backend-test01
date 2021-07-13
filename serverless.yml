@@ -32,7 +32,7 @@ custom:
         field: getItemsTable
         dataSource: ItemsTable
       - type: Query
-        field: listItemsTable
+        field: listItemsTables
         dataSource: ItemsTable
       - type: Mutation
         field: createItemsTable
