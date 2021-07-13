@@ -28,9 +28,12 @@ The CI/CD should trigger a deployment based on a git push to the `main` branch w
 
 Please spend only what you consider a reasonable amount of time for this.
 
-## Optionally
+## CI/CD
 
-Create a frontend with ReactJS and Material UI which uses the Amplify library to connect to your AppSync API for the CRUD functionality.
+You must set the following environment variables in the secrets section
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+DEV_ACCOUNT_ID - which is the IAM role account number for your ci-role.
 
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/github_actions_01.png)
 
