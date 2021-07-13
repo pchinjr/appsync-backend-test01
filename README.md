@@ -28,6 +28,12 @@ The CI/CD should trigger a deployment based on a git push to the `main` branch w
 
 Please spend only what you consider a reasonable amount of time for this.
 
+## IaC
+
+## General Architecture
+
+## GraphQL Resolver templates
+
 ## CI/CD
 
 You must set the following environment variables in the secrets section
@@ -43,8 +49,9 @@ DEV_ACCOUNT_ID - which is the IAM role account number for your ci-role.
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/appsync_01.png)
 
 ## TODO
+
 add ability to deploy to a second environment like prod
 
-review graphql schema
+Move resolver logic into lambda functions instead of vtl
 
 praise cage
