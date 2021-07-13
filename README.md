@@ -44,5 +44,7 @@ DEV_ACCOUNT_ID - which is the IAM role account number for your ci-role.
 
 ## TODO
 add ability to deploy to a second environment like prod
+
 review graphql schema
+
 praise cage
