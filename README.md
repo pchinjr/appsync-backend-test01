@@ -30,27 +30,44 @@ Please spend only what you consider a reasonable amount of time for this.
 
 ## IaC
 
-## General Architecture
-
-## GraphQL Resolver templates
+IaC is important because we want to have repeatable and testable deploy processes. The resource creation should be declarative and deterministic.
 
 ## CI/CD
 
-You must set the following environment variables in the secrets section
+CI/CD is crucial for delivering high quality software, it helps engineers release in a timely manner. Today we will be using GitHub Actions for continuous integration on each push to `main` branch. A special role was created using AWS IAM in order to lock the deployment down to least privilege.
 
-AWS_ACCESS_KEY_ID
+You must set the following environment variables in the secrets section of your GitHub repo. 
 
-AWS_SECRET_ACCESS_KEY
+`AWS_ACCESS_KEY_ID`
 
-DEV_ACCOUNT_ID - which is the IAM role account number for your ci-role.
+`AWS_SECRET_ACCESS_KEY`
+
+`DEV_ACCOUNT_ID` - which is the IAM role account number for your ci-role.
 
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/github_actions_01.png)
 
+
+## General Architecture
+
+GraphQL is software designed to handle many kinds of relationships for your data. Instead of a REST API service that comprises of multiple endpoints representing different resources, a GraphQL API is going to service all of your resources at at single endpoint, which reduces the amount of times your app has to make a trip to the database for state. This solves the problem of over fetching or under fetching data.
+
+Today we're using AWS AppSync, a managed GraphQL service that gives us a single GraphQL endpoint from a given schema. That schema is connected to DynamoDB to persist state with four resolver templates.
+
+## GraphQL Resolver templates
+
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/appsync_01.png)
+
+Mutation: createItemsTable
+
+Mutation: deleteItemsTable
+
+Query: getItemsTable
+
+Query: listItemsTable
 
 ## TODO
 
-add ability to deploy to a second environment like prod
+add ability to deploy to a second environment, like prod
 
 Move resolver logic into lambda functions instead of vtl
 
