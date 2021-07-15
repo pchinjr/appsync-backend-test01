@@ -36,13 +36,13 @@ IaC is important because we want to have repeatable and testable deploy processe
 
 CI/CD is crucial for delivering high quality software, it helps engineers release in a timely manner. Today we will be using GitHub Actions for continuous integration on each push to `main` branch. A special role was created using AWS IAM in order to lock the deployment down to least privilege.
 
-You must set the following environment variables in the secrets section of your GitHub repo. 
+You must set the following environment variables in the secrets section of your GitHub repo.
 
 `AWS_ACCESS_KEY_ID`
 
 `AWS_SECRET_ACCESS_KEY`
 
-`DEV_ACCOUNT_ID` - which is the IAM role account number for your ci-role.
+`DEV_ACCOUNT_ID` - which is the IAM role account number for your `ci-role`.
 
 ![alt text](https://github.com/pchinjr/appsync-backend-test01/blob/main/github_actions_01.png)
 
@@ -64,6 +64,10 @@ Mutation: deleteItemsTable
 Query: getItemsTable
 
 Query: listItemsTable
+
+## Video walkthrough
+
+[https://www.loom.com/share/b1a3c7dd8ddf45a79db8883a151ba73c](https://www.loom.com/share/b1a3c7dd8ddf45a79db8883a151ba73c)
 
 ## TODO
 
